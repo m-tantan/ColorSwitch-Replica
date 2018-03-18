@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public float tapForce = 10f;
+    public float tapForce = 12f;
     public Rigidbody2D rb;
 
 
