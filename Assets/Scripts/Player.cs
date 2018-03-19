@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     public Color green;
     public Color yellow;
     private String currColor;
+    private bool platformWait = true;
 
     // Use this for initialization
     void Start () {
@@ -56,19 +57,32 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 	    if(Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump")) {
+            rb.simulated = true;
             rb.velocity = Vector2.up * tapForce;
         }	
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
-           
+        if (other.tag == "Platfrorm")
+        {
+            rb.simulated = false;
+            Destroy(other.gameObject);
+            return;
+
+        }
+
         if (other.tag == "ColorChanger")
         {
             SetRandomColor();
             Destroy(other.gameObject);
             return; 
         }
-        if (currColor != other.tag) {
+        else if (other.tag == "Win") {
+            rb.simulated = false;
+            return;
+        }
+        else if (currColor != other.tag && !platformWait) {
+            
             Debug.Log(other.tag);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
