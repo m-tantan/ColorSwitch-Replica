@@ -12,21 +12,29 @@ public class Player : MonoBehaviour {
     public Color green;
     public Color yellow;
     private String currColor;
-    private bool platformWait = true;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        rb.simulated = false;
         SetRandomColor();
 	}
 
+    void Update () {
+
+	    if(Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump")) {
+            rb.simulated = true;
+            rb.velocity = Vector2.up * tapForce;
+        }	
+	}
     private void SetRandomColor()
     {
         String current = currColor;
         int color = Random.Range(0, 4);
-        
-        switch (color) {
+
+        switch (color)
+        {
             case 0:
                 currColor = "Red";
                 sr.color = red;
@@ -53,22 +61,13 @@ public class Player : MonoBehaviour {
         }
         else return;
     }
-
-    // Update is called once per frame
-    void Update () {
-	    if(Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump")) {
-            rb.simulated = true;
-            rb.velocity = Vector2.up * tapForce;
-        }	
-	}
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Platfrorm")
+        if (other.tag == "Platform")
         {
+            //transform.position = new Vector3(transform.position.x, -4.741f, transform.position.z);
             rb.simulated = false;
-            Destroy(other.gameObject);
             return;
-
         }
 
         if (other.tag == "ColorChanger")
@@ -81,7 +80,7 @@ public class Player : MonoBehaviour {
             rb.simulated = false;
             return;
         }
-        else if (currColor != other.tag && !platformWait) {
+        else if (currColor != other.tag && other.tag != "Platform") {
             
             Debug.Log(other.tag);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
