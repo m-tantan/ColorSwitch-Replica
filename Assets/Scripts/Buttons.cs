@@ -19,6 +19,11 @@ public class Buttons : MonoBehaviour {
     public void FromOptionsToMenu() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
     }
+    public void FromGameToMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+    }
 
     public void ExitScene()
     {
