@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     public Color blue;
     public Color green;
     public Color yellow;
+
     private String currColor;
 
     // Use this for initialization

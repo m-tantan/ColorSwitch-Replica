@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour {
 
@@ -8,6 +9,11 @@ public class FollowPlayer : MonoBehaviour {
 	void Update () {
 		if (player.position.y > transform.position.y) {
             transform.position = new Vector3(transform.position.x, player.position.y, transform.position.z);
+        }
+
+        if (player.position.y < transform.position.y - 7.5)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 	}
 }

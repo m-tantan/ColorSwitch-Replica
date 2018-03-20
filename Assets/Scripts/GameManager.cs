@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField]
     private int level = 1;
-	// Use this for initialization
+    
 	void Awake() {
         instance = this;
         InstantiateCircles();
@@ -20,11 +20,30 @@ public class GameManager : MonoBehaviour {
 
     private void InstantiateCircles()
     {
+        level++;
+        if (level>0)
+        {
+            Debug.Log(level);
+        }
         //for (int i = 0; i < numberOfCircles; ++i) {
         //    //GameObject circle = );
         //    circles[i] = circle;
             
         //}
+    }
+
+    private void BuildLevel() {
+        numberOfCircles = (int)Mathf.Log(level);
+        float lengthOfLevel = createLevel(numberOfCircles);
+    }
+
+    private float createLevel(int numberOfCircles)
+    {
+        float length = 0f;
+            for (int i = 0; i < numberOfCircles; ++i) {
+                
+            }
+        return length;
     }
 
     // Update is called once per frame
