@@ -11,15 +11,16 @@ public class Player : MonoBehaviour {
     public Color blue;
     public Color green;
     public Color yellow;
-
-    private String currColor;
+    [HideInInspector]
+    public String currColor;
 
     // Use this for initialization
     void Start () {
+        
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         rb.simulated = false;
-        SetRandomColor();
+        ColorChanger.SetRandomColor(this);
 	}
 
     void Update () {
@@ -29,39 +30,13 @@ public class Player : MonoBehaviour {
             rb.velocity = Vector2.up * tapForce;
         }	
 	}
-    private void SetRandomColor()
+  
+
+    public void resetPlayer()
     {
-        String current = currColor;
-        int color = Random.Range(0, 4);
-
-        switch (color)
-        {
-            case 0:
-                currColor = "Red";
-                sr.color = red;
-                break;
-            case 1:
-                currColor = "Blue";
-                sr.color = blue;
-
-                break;
-            case 2:
-                currColor = "Green";
-                sr.color = green;
-
-                break;
-            case 3:
-                currColor = "Yellow";
-                sr.color = yellow;
-
-                break;
-        }
-        if (current == currColor)
-        {
-            SetRandomColor();
-        }
-        else return;
+       transform.position = new Vector3(0f, -6f, 0f);
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Platform")
@@ -73,12 +48,14 @@ public class Player : MonoBehaviour {
 
         if (other.tag == "ColorChanger")
         {
-            SetRandomColor();
+            ColorChanger.SetRandomColor(this);
             Destroy(other.gameObject);
             return; 
         }
         else if (other.tag == "Win") {
             rb.simulated = false;
+            print("PlayerWon");
+            GameManager.instance.gameWon = true;
             return;
         }
         else if (currColor != other.tag && other.tag != "Platform") {
