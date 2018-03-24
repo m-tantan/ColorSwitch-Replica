@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +11,10 @@ public class GameManager : MonoBehaviour {
     public GameObject[] circles;
     public int numberOfCircles;
     public Levels levelManager;
-    public GameObject[] colorChangers;
-    public Text levelText;
+    public TextMeshProUGUI  levelText;
 
     [SerializeField]
-    private static int level = 1;
+    public static int level = 18;
     [HideInInspector]
     public bool gameWon = false;
 
@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour {
     {
         BeginSingleton();
         levelManager.setupLevel(level);
-        //levelText
+        
+
+
     }
     void Start()
     {
@@ -41,12 +43,11 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        //levelText.text = "Level: " + level;
+        levelText.text = "Level: " + level;
         if (gameWon)
         {
+            print("Beat level: " + level);
             level += 1;
-            print(level);
-            print("Game Manager Won!");
             levelManager.nextLevel(level);
             gameWon = false;
             player.resetPlayer();
