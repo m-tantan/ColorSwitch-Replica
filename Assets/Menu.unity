@@ -769,6 +769,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1303763547}
+--- !u!1001 &1482822845
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4804727153509202, guid: 57ab84ff448af144684ff9fb0853e429, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804727153509202, guid: 57ab84ff448af144684ff9fb0853e429, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804727153509202, guid: 57ab84ff448af144684ff9fb0853e429, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804727153509202, guid: 57ab84ff448af144684ff9fb0853e429, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804727153509202, guid: 57ab84ff448af144684ff9fb0853e429, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804727153509202, guid: 57ab84ff448af144684ff9fb0853e429, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804727153509202, guid: 57ab84ff448af144684ff9fb0853e429, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804727153509202, guid: 57ab84ff448af144684ff9fb0853e429, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 57ab84ff448af144684ff9fb0853e429, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1552071799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,75 +1147,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1998893739
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1998893741}
-  - component: {fileID: 1998893740}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1998893740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1998893739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9986927b78468f34f9f30d6dc6e828be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: BackgroundMusic
-    clip: {fileID: 8300000, guid: 140ff87b48c0ca1439e59b92face7b9a, type: 3}
-    volume: 0.238
-    pitch: 2
-    isLoop: 1
-    isPlayOnAwake: 0
-    source: {fileID: 0}
-  - name: Tap
-    clip: {fileID: 8300000, guid: 005ceb923125c634e9da2e0dab37e88e, type: 3}
-    volume: 0.5
-    pitch: 1.5
-    isLoop: 0
-    isPlayOnAwake: 0
-    source: {fileID: 0}
-  - name: Death
-    clip: {fileID: 8300000, guid: c09039cc9c9819444a312667e7c420c7, type: 3}
-    volume: 0.5
-    pitch: 1
-    isLoop: 0
-    isPlayOnAwake: 0
-    source: {fileID: 0}
-  - name: NextLevel
-    clip: {fileID: 8300000, guid: 257095b4cc19c034b85aad5cd8b8f708, type: 3}
-    volume: 0.5
-    pitch: 1
-    isLoop: 0
-    isPlayOnAwake: 0
-    source: {fileID: 0}
---- !u!4 &1998893741
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1998893739}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2034254196
 GameObject:
   m_ObjectHideFlags: 0

@@ -55,6 +55,8 @@ public class Levels : MonoBehaviour {
 
             lastType = circleType;
         }
+        if (numberOfCircles == 0)
+            yLocation = -5;
         GameObject winGO = Instantiate(win, new Vector3(0f, yLocation + 9, 0f), Quaternion.identity);
         winGO.transform.localScale = new Vector3(0.3f, 0.3f, 0f);
         
@@ -113,6 +115,7 @@ public class Levels : MonoBehaviour {
         activeChangers.Clear();
         int numOfCircles = (int)Mathf.Floor(level/levelProgressRate);
         initiateCircles(numOfCircles);
+        RotateCircle.maxSpeed += 5;
 
     }
 }

@@ -6,6 +6,7 @@ public class RotateCircle : MonoBehaviour {
     public float rotateSpeed ;
     public bool isReverse;
     private RotateCircle parentCircle;
+    public static int maxSpeed = 85;
     void Start()
     {
         if (transform.tag == "InsideCircle")
@@ -15,7 +16,8 @@ public class RotateCircle : MonoBehaviour {
         }
         else {
 
-        rotateSpeed += Random.Range(70, 130);
+        
+        rotateSpeed += Random.Range(70, maxSpeed);
         isReverse = Random.Range(0,10) > 5 ? true : false;
         if (isReverse)
             rotateSpeed *= -1f;

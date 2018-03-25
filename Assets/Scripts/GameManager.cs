@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
         if (gameWon)
         {
             FindObjectOfType<AudioManager>().playSound("NextLevel");
+
             print("Beat level: " + level);
             level += 1;
             levelManager.nextLevel(level);
