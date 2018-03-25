@@ -113,5 +113,6 @@ public class Levels : MonoBehaviour {
         activeChangers.Clear();
         int numOfCircles = (int)Mathf.Floor(level/levelProgressRate);
         initiateCircles(numOfCircles);
+
     }
 }

@@ -15,5 +15,5 @@ public class FollowPlayer : MonoBehaviour {
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-	}
+    }
 }

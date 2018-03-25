@@ -1,19 +1,21 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Buttons : MonoBehaviour {
 
-	
-	public void SwitchScene(int scene) {
+    public Slider musicSlider;
+    public Slider soundsSlider;
+
+	public void PlayGame(int scene) {
         
         Debug.Log("Clicked Play");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-
     }
 
     public void OptionsMenu() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
     }
 
     public void FromOptionsToMenu() {
@@ -25,8 +27,17 @@ public class Buttons : MonoBehaviour {
 
     }
 
+    public void changeMusicVolume()
+    {
+        FindObjectOfType<AudioManager>().editMusicVolume(musicSlider.value);
+    }
+    public void changeSoundsVolume()
+    {
+        FindObjectOfType<AudioManager>().editMusicVolume(musicSlider.value);
+    }
     public void ExitScene()
     {
+        
         Debug.Log("Exit");
         Application.Quit();
     }

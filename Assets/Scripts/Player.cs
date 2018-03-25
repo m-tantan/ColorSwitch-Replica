@@ -13,10 +13,10 @@ public class Player : MonoBehaviour {
     public Color yellow;
     [HideInInspector]
     public String currColor;
+    //private GameManager gameManager;
 
-    // Use this for initialization
     void Start () {
-        
+        //gameManager = GameManager.instance;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         rb.simulated = false;
@@ -28,8 +28,10 @@ public class Player : MonoBehaviour {
 	    if(Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump")) {
             rb.simulated = true;
             rb.velocity = Vector2.up * tapForce;
-        }	
-	}
+            FindObjectOfType<AudioManager>().playSound("Tap");
+
+        }
+    }
   
 
     public void resetPlayer()
@@ -61,6 +63,7 @@ public class Player : MonoBehaviour {
         else if (currColor != other.tag && other.tag != "Platform") {
             
             Debug.Log(other.tag);
+            FindObjectOfType<AudioManager>().playSound("Death");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         }

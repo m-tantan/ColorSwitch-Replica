@@ -238,7 +238,6 @@ MonoBehaviour:
   circles:
   - {fileID: 1276299606899642, guid: fd9221f371ca83a4487e79f94cc42195, type: 2}
   - {fileID: 1539088612214464, guid: ea6d157d92ae95945b8d2c6393e6c074, type: 2}
-  numberOfCircles: 0
   levelManager: {fileID: 388984167}
   levelText: {fileID: 1619347623}
   gameWon: 0
@@ -654,6 +653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beaa62be03aefb848886635bbc4b8614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSlider: {fileID: 0}
+  soundsSlider: {fileID: 0}
 --- !u!1 &1619347622
 GameObject:
   m_ObjectHideFlags: 0
